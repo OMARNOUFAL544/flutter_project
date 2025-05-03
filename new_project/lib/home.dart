@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_bottom_navbar.dart';
 
 class HomeScreen extends StatelessWidget {
   // مسارات الصور
@@ -19,7 +20,6 @@ class HomeScreen extends StatelessWidget {
           children: [
             Image.asset('images/logo.png', height: 50, width: 50),
             const SizedBox(width: 10),
-           
           ],
         ),
       ),
@@ -47,7 +47,9 @@ class HomeScreen extends StatelessWidget {
               itemCount: productImages.length,
               itemBuilder: (context, index) {
                 return Dismissible(
-                  key: Key(productImages[index] + index.toString()), // لازم Key فريد
+                  key: Key(
+                    productImages[index] + index.toString(),
+                  ), // لازم Key فريد
                   direction: DismissDirection.up, // سحب للأعلى
                   onDismissed: (direction) {
                     productImages.removeAt(index);
@@ -99,24 +101,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
           ),
-
-          // الأزرار
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/signup');
-            },
-            child: const Text("Go to Signup"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/login');
-            },
-            child: const Text("Go to Login"),
-          ),
-          const SizedBox(height: 20),
         ],
       ),
+      bottomNavigationBar: CustomBottomNavbar(selectedIndex:0),
+      
     );
   }
 }
