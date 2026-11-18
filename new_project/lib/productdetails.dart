@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'product.dart'; // تأكد أنك تستورد الكلاس Product
+import 'product.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final Product product;
