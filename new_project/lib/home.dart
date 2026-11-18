@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'custom_bottom_navbar.dart';
 
 class HomeScreen extends StatelessWidget {
-  // مسارات الصور
   final List<String> productImages = [
     'images/logo.png',
     'images/logo.png',
